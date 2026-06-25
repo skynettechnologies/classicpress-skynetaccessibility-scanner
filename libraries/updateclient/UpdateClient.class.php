@@ -54,7 +54,9 @@ class UpdateClient {
 
 	// Object config data.
 	private $config;
+	private $identifier = '';
 
+	private $server_slug = '';
 	/**
 	 * Default CP version.
 	 *
@@ -188,12 +190,29 @@ class UpdateClient {
 		// Only need this JS/CSS on the plugin admin page and updates page.
 		if ($screen->base === 'plugins' || $screen->base === 'plugin-install') {
 			// This will make the jQuery below work with various languages.
-			$text1 = esc_html__('Compatible up to:');
-			$text2 = esc_html__('Reviews');
-			$text3 = esc_html__('Read all reviews');
-			// Swap "Compatible up to: 4.9.99" with "Compatible up to: 1.1.1".
-			echo '<script>jQuery(document).ready(function($){$("ul li:contains(4.9.99)").html("<strong>'.$text1.'</strong> '.$this->cp_latest_version.'");$(".fyi h3:contains('.$text2.')").hide();$(".fyi p:contains('.$text3.')").hide();});</script>'."\n";
-			// Styles for the modal window.
+		$text1 = esc_html__('Compatible up to:', 'skynet-accessibility-scanner');
+		$text2 = esc_html__('Reviews', 'skynet-accessibility-scanner');
+		$text3 = esc_html__('Read all reviews', 'skynet-accessibility-scanner');
+					// Swap "Compatible up to: 4.9.99" with "Compatible up to: 1.1.1".
+			// $text1_js = esc_js($text1);
+			// $text2_js = wp_json_encode($text2);
+			// $text3_js = wp_json_encode($text3);
+			// $cp_version = esc_js($this->cp_latest_version);
+
+			printf(
+				'<script>
+				jQuery(document).ready(function($){
+					$("ul li:contains(4.9.99)").html("<strong>%1$s</strong> %2$s");
+					$(".fyi h3:contains(" + %3$s + ")").hide();
+					$(".fyi p:contains(" + %4$s + ")").hide();
+				});
+				</script>' . "\n",
+				esc_js($text1),
+				esc_js($this->cp_latest_version),
+				wp_json_encode($text2),
+				wp_json_encode($text3)
+			);
+						// Styles for the modal window.
 			echo '<style>'."\n";
 			// Hide the ratings text and links to WP.org reviews.
 			echo '.fyi .counter-container {display:none;}'."\n";
@@ -380,7 +399,7 @@ class UpdateClient {
 		// Add the link to the plugin's or theme's row, if not already existing.
 		if ($this->identifier === $component_file) {
 			$anchors_string = implode('', $component_meta);
-			$anchor_text = esc_html__('View details');
+			$anchor_text = esc_html__('View details', 'skynet-accessibility-scanner');
 			if (!preg_match('|(\<a[ \s\S\d]*)('.$anchor_text.')(<\/a>)|', $anchors_string)) {
 				$component_meta[] = '<a class="thickbox" href="'.admin_url('/'.$this->config['type'].'-install.php?tab='.$this->config['type'].'-information&'.$this->config['type'].'='.$this->server_slug.'&TB_iframe=true&width=600&height=550').'">'.$anchor_text.'</a>';
 			}
@@ -446,16 +465,34 @@ class UpdateClient {
 
 		// Updating a plugin or theme?
 		if ($hook_suffix === 'update') {
-			// Got both of the needed arguments?
-			if (isset($_GET['action'], $_GET[$this->config['type']])) {
-				// First argument is good?
-				if ($_GET['action'] === 'upgrade-'.$this->config['type']) {
-					// Next argument is good?
-					if ($_GET[$this->config['type']] === $hook_extra[$this->config['type']]) {
-						// Activate the component.
-						$function = ($this->config['type'] === 'plugin') ? 'activate_plugin' : 'activate_theme';
-						$function($hook_extra[$this->config['type']]);
-					}
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if (
+				isset($_GET['action'], $_GET[$this->config['type']], $_GET['_wpnonce'])
+			) {
+
+				$action = sanitize_text_field(wp_unslash($_GET['action']));
+				$component = sanitize_text_field(
+					wp_unslash($_GET[$this->config['type']])
+				);
+
+				$nonce = sanitize_text_field(
+					wp_unslash($_GET['_wpnonce'])
+				);
+
+				if (
+					wp_verify_nonce(
+						$nonce,
+						'upgrade-plugin_' . $component
+					) &&
+					$action === 'upgrade-' . $this->config['type'] &&
+					$component === $hook_extra[$this->config['type']]
+				) {
+
+					$function = ($this->config['type'] === 'plugin')
+						? 'activate_plugin'
+						: 'activate_theme';
+
+					$function($hook_extra[$this->config['type']]);
 				}
 			}
 		}
@@ -658,9 +695,12 @@ class UpdateClient {
 		}
 
 		// Still an error? Hey, you tried. Bail.
-		if (is_wp_error($raw_response) || 200 != wp_remote_retrieve_response_code($raw_response)) {
-			return [];
-		}
+		if (
+			is_wp_error( $raw_response ) ||
+			200 !== wp_remote_retrieve_response_code( $raw_response )
+		)  {
+				return [];
+			}
 
 		// Get the response body; decode it as an array.
 		$data = json_decode(trim(wp_remote_retrieve_body($raw_response)), true);
@@ -835,6 +875,8 @@ class UpdateClient {
 
 		// Get decoded reponse.
 		$versions = json_decode(wp_remote_retrieve_body($response));
+
+		$version = '';
 
 		// Reverse iterate to find the latest version.
 		for ($i=count($versions)-1; $i>0; $i--) {

@@ -1,0 +1,3262 @@
+.scanning-monitoring-app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 50px 50px 281px;
+    font-family: 'rubik', sans-serif;
+}
+@media only screen and (max-width: 512px) {
+    .scanning-monitoring-app {
+        padding: 0;
+    }
+}
+.scanning-monitoring-app .scans {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.scanning-monitoring-app .scans .page-background {
+    position: absolute;
+    /*opacity: 0.3;
+    */
+}
+.scanning-monitoring-app .scans .title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.scanning-monitoring-app .scans .skynet-status {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 1rem;
+    border: 1px solid #420083;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+@media only screen and (min-width: 300px) and (max-width: 402px) {
+    .scanning-monitoring-app .scans .skynet-status {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+@media only screen and (max-width: 450px) {
+    .scanning-monitoring-app .scans .skynet-status {
+        grid-template-columns: repeat(auto-fit, minmax(122px, 1fr));
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .page-background {
+    background: url('../images/sitemap-bg.png') no-repeat center;
+    opacity: 0.3;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card {
+    background: #fff !important;
+    position: relative;
+    color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    gap: 0.25rem;
+    border: 0.5px solid #b776ff 80;
+    align-items: center;
+    justify-content: space-between;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value.status-progress .violations {
+    color: #000 !important;
+    font-weight: 400 !important;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value.status-progress .violations span {
+    color: #9f0000 !important;
+}
+@media only screen and (max-width: 512px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #420083;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card .status-title {
+        font-size: 16px;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value {
+    font-size: 15px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .status-process {
+    color: #420083;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value a {
+    color: #000;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value span {
+    font-size: 36px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card .status-value {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value img {
+    margin-right: 5px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .progress-bar {
+    width: 102px;
+    height: 6px;
+    background: #e8d5ff;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .progress-bar .progress-fill {
+    height: 100%;
+    background: #420083;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .vilolations {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 10px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .vilolations span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #9f0000;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-progress {
+    color: #9f0000;
+    font-weight: 700;
+}
+@media only screen and (max-width: 450px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card .status-progress {
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-progress .vilolations span {
+    font-weight: 700;
+}
+.scanning-monitoring-app .scans .divider {
+    border: none;
+    border-top: 1px solid #ead5ff;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+.scanning-monitoring-app .scans .plan {
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.scanning-monitoring-app .scans .plan .page-background {
+    background: url('../images/plan-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    pointer-events: none;
+    /* This allows clicks to pass through */
+}
+.scanning-monitoring-app .scans .plan .plan-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+}
+@media only screen and (max-width: 1199px) {
+    .scanning-monitoring-app .scans .plan .plan-info {
+        justify-content: center;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-left {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-type {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-type .icon-circle {
+    background-color: #f7f1ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-desc {
+    font-size: 16px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-desc ul {
+    margin-bottom: 0;
+    padding-left: 10px;
+    margin-left: 12px;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-badge {
+    background: #d1ffd3;
+    color: #006d04;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-badge {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right {
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal {
+    font-size: 16px;
+    font-weight: 500;
+    color: #420083;
+    margin-left: 5px;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal strong {
+    color: #030104;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .cancel-btn {
+    margin-left: 16px;
+    background: #9f0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 23px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right .cancel-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+.scanning-monitoring-app .scans .pricing {
+    color: #000;
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.scanning-monitoring-app .scans .pricing .page-background {
+    background: url('../images/pricing-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    pointer-events: none;
+    /* This allows clicks to pass through */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .pricing .billing-toggle {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .save {
+    background-color: #913bef;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 16px;
+    margin-left: 5px;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .label {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+    background: none;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .label.active {
+    color: #420083;
+    background: none;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 2px solid #420083;
+    border-radius: 34px;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 14px;
+    left: 3px;
+    bottom: 2px;
+    background-color: #420083;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input:checked + .slider {
+    background-color: #420083;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: white;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier {
+    background: #fff !important;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 10px;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .icon-circle {
+    background-color: #f7f1ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-info .tier-title {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-align: left;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-info .tier-pages {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-divider {
+    margin: 20px 0;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .old-price {
+    position: relative;
+    display: inline-block;
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .old-price::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: -5%;
+    width: 110%;
+    height: 2px;
+    background-color: #cd0000;
+    transform: rotate(-14deg);
+    transform-origin: center;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .new-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #420083;
+    margin: 0;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .new-price .per-year {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .upgrade-btn {
+    background: #420083;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.9rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .scans .pricing .pricing-contact {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .pricing .pricing-contact {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .scans .pricing .pricing-contact a {
+    color: #420083;
+    text-decoration: none;
+    font-weight: 700;
+}
+.scanning-monitoring-app .scans .help {
+    color: #000;
+    background: #fff2b6;
+    border-radius: 10px;
+    padding: 33px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .scans .help .help-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help .help-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+.scanning-monitoring-app .scans .help .help-text strong {
+    font-size: 24px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help .help-text strong {
+        font-size: 18px;
+    }
+}
+.scanning-monitoring-app .scans .help .help-btn {
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-report {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: 'Rubik', sans-serif;
+    /*display: flex;*/
+    flex-direction: column;
+}
+.scanning-monitoring-app .accessibility-report .report-date {
+    display: inline-flex; /* change from flex → inline-flex */
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+
+    padding: 6px 12px; /* ADD */
+    border-radius: 8px; /* ADD */
+    background: #f5f3ff; /* ADD (light purple theme) */
+    border: 1px solid #e0d7ff; /* ADD */
+}
+.scanning-monitoring-app .accessibility-report .report-date label {
+    font-weight: 600;
+    color: #5b21b6;
+    margin: 0;
+}
+
+.scanning-monitoring-app .accessibility-report .report-date span {
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/*.scanning-monitoring-app .accessibility-report .report-date::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 70px;
+    height: 2px;
+    background: #ef4444;
+    border-radius: 2px;
+}*/
+.scanning-monitoring-app .accessibility-report .report-date select {
+    border: 1px solid #ccc;
+    padding: 7px 8px;
+    border-radius: 6px;
+    padding-right: 50px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 0.5rem center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+.scanning-monitoring-app .accessibility-report .top-section {
+    display: grid;
+    gap: 10px;
+    border: 0.5px solid #d6d6d6;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    grid-template-columns: 2fr 1fr;
+}
+@media only screen and (max-width: 1200px) {
+    .scanning-monitoring-app .accessibility-report .top-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .scanning-monitoring-app .accessibility-report .top-section {
+        grid-template-columns: 1fr;
+    }
+}
+.scanning-monitoring-app .accessibility-report .top-section .card {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #420083;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 500px) {
+    .scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .score-value {
+    font-size: 72px;
+    font-weight: 700;
+    color: #000;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .status-text {
+    font-size: 14px;
+    font-weight: 500;
+    background: #fff0f0;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .status-text.not-compliant {
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .pages-value {
+    font-size: 72px;
+    font-weight: 700;
+    color: #000;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #cae8ff;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .progress-bar .progress-fill {
+    height: 100%;
+    background: #4a6681;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .note {
+    font-weight: 400;
+    font-size: 14px;
+    background: none;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card.score-card {
+    border-radius: 10px 0 0 10px;
+    border: 0.5px solid rgba(183, 118, 255, 0.50);
+    background: rgba(145, 59, 239, 0.02);
+    max-width: 1280px;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card.pages-card {
+    border-radius: 0 10px 10px 0;
+    border: 0.5px solid rgba(183, 118, 255, 0.50);
+    background: rgba(145, 59, 239, 0.02);
+}
+.scanning-monitoring-app .accessibility-report .wcag-section {
+    background: #fff;
+    border: 0.5px solid #d6d6d6;
+    border-radius: 10px;
+    padding: 20px 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 540px) {
+    .scanning-monitoring-app .accessibility-report .wcag-section .wcag-header {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #420083;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header .view-btn {
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: #420083;
+    margin-bottom: 18px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header .view-btn svg {
+    margin-left: 10px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card {
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(183, 118, 255, 0.50);
+    background: rgba(145, 59, 239, 0.02);
+    text-align: left;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card .check-value {
+    font-size: 36px;
+    font-weight: 700;
+    display: block;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card .check-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.failed .check-label {
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.passed .check-label {
+    color: #1f7b22;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.na .check-label {
+    color: #787878;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .divider {
+    border: none;
+    border-top: 1px solid #e6e6e6;
+    margin: 30px 20px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card {
+    border: 1px solid #ddd;
+    padding: 26px 30px;
+    text-align: center;
+    border-radius: 5px;
+    background: #eff7ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-title {
+    font-weight: 700;
+    font-size: 24px;
+    display: block;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-count {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-count span {
+    font-weight: 600;
+    font-size: 24px;
+}
+.scanning-monitoring-app .accessibility-scanning {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.scanning-monitoring-app .accessibility-scanning .page-background {
+    position: absolute;
+    opacity: 0.3;
+}
+.scanning-monitoring-app .accessibility-scanning .title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 1rem;
+    border: 1px solid #420083;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .page-background {
+    background: url('../images/sitemap-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    gap: 0.25rem;
+    border: 0.5px solid #b776ff 80;
+    align-items: center;
+    justify-content: space-between;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #420083;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-title {
+        font-size: 16px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value {
+    font-size: 15px;
+    font-weight: 500;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .status-process {
+    color: #420083;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value span {
+    font-size: 36px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value img {
+    margin-right: 5px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .progress-bar {
+    width: 102px;
+    height: 6px;
+    background: #e8d5ff;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .progress-bar .progress-fill {
+    height: 100%;
+    background: #420083;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .vilolations {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .vilolations span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-progress {
+    font-size: 15px;
+    font-weight: 700;
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-scanning .divider {
+    border: none;
+    border-top: 1px solid #ead5ff;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .plan {
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 10px;
+    position: relative;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .page-background {
+    background: url('../images/plan-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 1199px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info {
+        justify-content: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type .icon-circle {
+    background-color: #f7f1ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type .icon-circle svg, .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type .icon-circle img {
+    width: 16px;
+    height: 16px;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-desc {
+    font-size: 16px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-desc ul {
+    margin-bottom: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-badge {
+    background: #d1ffd3;
+    color: #006d04;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-badge {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right {
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal {
+    font-size: 16px;
+    font-weight: 500;
+    color: #420083;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal strong {
+    color: #030104;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .cancel-btn {
+    margin-left: 16px;
+    background: #9f0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .cancel-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing {
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .page-background {
+    background: url('../images/pricing-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .save {
+    background-color: #913bef;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 16px;
+    margin-left: 5px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .label {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .label.active {
+    color: #420083;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 2px solid #420083;
+    border-radius: 34px;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 2px;
+    background-color: #420083;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input:checked + .slider {
+    background-color: #420083;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: white;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier {
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .icon-circle {
+    background-color: #f7f1ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-info .tier-title {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-align: left;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-info .tier-pages {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-divider {
+    margin: 20px 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .old-price {
+    position: relative;
+    display: inline-block;
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .old-price::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: -5%;
+    width: 110%;
+    height: 2px;
+    background-color: #cd0000;
+    transform: rotate(-14deg);
+    transform-origin: center;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .new-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #420083;
+    margin: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .new-price .per-year {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .upgrade-btn {
+    background: #420083;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact a {
+    color: #420083;
+    text-decoration: none;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-scanning .help {
+    background: #fff2b6;
+    border-radius: 10px;
+    padding: 33px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help .help-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-text strong {
+    font-size: 24px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help .help-text strong {
+        font-size: 18px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-btn {
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-btn {
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+}
+.wcag-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.wcag-box {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f9f9f9;
+}
+.wcag-box strong {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 5px;
+}
+.failed {
+    color: #c62828;
+}
+.passed {
+    color: #2e7d32;
+}
+.na {
+    color: #616161;
+}
+.levels {
+    display: flex;
+    gap: 20px;
+}
+.level-box {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background: #e3f2fd;
+}
+.level-box strong {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 5px;
+}
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 21px;
+    background: #420083;
+    /* Blue background */
+    color: #fff;
+    /* White text */
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+}
+.back-btn:hover {
+    background: #420083;
+    /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+.back-btn:active {
+    transform: translateY(0);
+}
+.cancel-btnn {
+    background-color: #fff !important;
+    /* white background */
+    color: #a30000 !important;
+    /* red text */
+    border: 1.5px solid #a30000 !important;
+    /* red border */
+    /*padding: 10px 30px !important;
+    */
+    /* padding */
+    border-radius: 6px !important;
+    /* rounded edges */
+    font-weight: bold !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    /* full width like your screenshot */
+    display: block !important;
+    text-align: center !important;
+}
+.cancel-btnn:hover {
+    background-color: #a30000 !important;
+    /* red bg on hover */
+    color: #fff !important;
+    /* white text on hover */
+}
+#content {
+    padding-bottom: 10px !important;
+}
+.scanning-monitoring-app {
+    padding: 16px 30px 50px !important;
+}
+/*!* Target specifically your plugin's menu *!*/
+/*#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa {
+	*/
+/* position: relative;
+*/
+/* width: 20px;
+*/
+/* height: 20px;
+*/
+/* color: transparent !important;
+ !* fallback *!*/
+/*
+}
+*/
+/*!* Kill the FA pseudo-element *!*/
+/*#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa:before {
+	*/
+/* content: none !important;
+*/
+/*
+}
+*/
+/*!* Add your SVG as background *!*/
+/*#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa {
+	*/
+/* background: url("../../../modules/mod_skynetaccessibilityscanner/icon.svg") no-repeat center center;
+*/
+/* background-size: contain;
+*/
+/*
+}
+*/
+/* Force your custom icon to behave like FA icons */
+#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    /* make sure background works */
+    text-indent: -9999px;
+    /* hide FA glyph if any */
+    background: url("../images/icon.svg") no-repeat center center;
+    background-size: contain;
+    /* match FA icon styles */
+    filter: brightness(0) invert(1);
+    /* turns it white like other icons */
+    opacity: 0.8;
+    /* same default FA opacity */
+    transition: opacity 0.2s ease-in-out;
+}
+/* Hover / active state */
+#admin-menu li a[href*="skynetaccessibilityscanner-manager"]:hover i.fa, #admin-menu li.selected a[href*="skynetaccessibilityscanner-manager"] i.fa {
+    opacity: 1;
+    /* brighten on hover/active */
+    filter: brightness(0) invert(1);
+}
+.custom-plugin-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../images/icon.svg") no-repeat center center;
+    background-size: contain;
+    margin-right: 8px;
+    /* space between icon and title */
+}
+#scroll-to-top {
+    display: none;
+}
+/* Full page loader */
+.page-loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Loader box */
+.loader-box {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+/* Spinner */
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #9b5cff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 12px;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Hide helper */
+.page-loader.hidden {
+    display: none;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html td.label, #row_skynetaccessibilityscannerpro_myscans_custom_html td.scope-label {
+    display: none !important;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html td.value {
+    padding-left: 0 !important;
+    padding-top: 0%;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html .value {
+    width: 100% !important;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html select {
+    width: auto !important;
+}
+
+.scanning-monitoring-app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 50px 281px;
+    font-family: 'rubik', sans-serif;
+}
+@media only screen and (max-width: 512px) {
+    .scanning-monitoring-app {
+        padding: 0;
+    }
+}
+.scanning-monitoring-app .scans {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.scanning-monitoring-app .scans .page-background {
+    position: absolute;
+    /*opacity: 0.3;
+    */
+}
+.scanning-monitoring-app .scans .title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+.scanning-monitoring-app .scans .skynet-status {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 1rem;
+    border: 1px solid #420083;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+@media only screen and (min-width: 300px) and (max-width: 402px) {
+    .scanning-monitoring-app .scans .skynet-status {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+@media only screen and (max-width: 450px) {
+    .scanning-monitoring-app .scans .skynet-status {
+        grid-template-columns: repeat(auto-fit, minmax(122px, 1fr));
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .page-background {
+    background: url('../images/sitemap-bg.png') no-repeat center;
+    opacity: 0.3;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card {
+    background: #fff !important;
+    position: relative;
+    color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    gap: 0.25rem;
+    border: 0.5px solid #b776ff 80;
+    align-items: center;
+    justify-content: space-between;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value.status-progress .violations {
+    color: #000 !important;
+    font-weight: 400 !important;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value.status-progress .violations span {
+    color: #9f0000 !important;
+}
+@media only screen and (max-width: 512px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #420083;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card .status-title {
+        font-size: 16px;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value {
+    font-size: 15px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .status-process {
+    color: #420083;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value a {
+    color: #000;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value span {
+    font-size: 18px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card .status-value {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value img {
+    margin-right: 5px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .progress-bar {
+    width: 102px;
+    height: 6px;
+    background: #e8d5ff;
+    border-radius: 3px;
+    margin-top: 5px;
+    float: none;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .progress-bar .progress-fill {
+    height: 100%;
+    background: #420083;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .vilolations {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 10px;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-value .vilolations span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #9f0000;
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-progress {
+    color: #9f0000;
+    font-weight: 700;
+}
+@media only screen and (max-width: 450px) {
+    .scanning-monitoring-app .scans .skynet-status .status-card .status-progress {
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .scans .skynet-status .status-card .status-progress .vilolations span {
+    font-weight: 700;
+}
+.scanning-monitoring-app .scans .divider {
+    border: none;
+    border-top: 1px solid #ead5ff;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+.scanning-monitoring-app .scans .plan {
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.scanning-monitoring-app .scans .plan .page-background {
+    background: url('../images/plan-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    pointer-events: none;
+    /* This allows clicks to pass through */
+}
+.scanning-monitoring-app .scans .plan .plan-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+}
+@media only screen and (max-width: 1199px) {
+    .scanning-monitoring-app .scans .plan .plan-info {
+        justify-content: center;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-left {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-type {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-type .icon-circle {
+    background-color: #f7f1ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-desc {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0%;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-desc ul {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    margin-left: 12px;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-badge {
+    background: #d1ffd3;
+    color: #006d04;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-badge {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right {
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal {
+    font-size: 16px;
+    font-weight: 500;
+    color: #420083;
+    margin-left: 5px;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal strong {
+    /*color: #fff;*/
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .cancel-btn {
+    margin-left: 16px;
+    background: #9f0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 23px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right .cancel-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+.scanning-monitoring-app .scans .pricing {
+    color: #000;
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.scanning-monitoring-app .scans .pricing .page-background {
+    background: url('../images/pricing-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    pointer-events: none;
+    /* This allows clicks to pass through */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .pricing .billing-toggle {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .save {
+    background-color: #913bef;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 16px;
+    margin-left: 5px;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .label {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+    background: none;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .label.active {
+    color: #420083;
+    background: none;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-bottom: inherit;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 2px solid #420083;
+    border-radius: 34px;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 14px;
+    left: 3px;
+    bottom: 2px;
+    background-color: #420083;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input:checked + .slider {
+    background-color: #420083;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: white;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier {
+    background: #fff !important;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 10px;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .icon-circle {
+    background-color: #f7f1ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-info .tier-title {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-align: left;
+    padding-bottom: 0px;
+    text-transform: none;
+    line-height: inherit;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-info .tier-pages {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-divider {
+    margin: 20px 0;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .old-price {
+    position: relative;
+    display: inline-block;
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .old-price::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: -5%;
+    width: 110%;
+    height: 2px;
+    background-color: #cd0000;
+    transform: rotate(-14deg);
+    transform-origin: center;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .new-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #420083;
+    margin: 0;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .new-price .per-year {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .upgrade-btn {
+    background: #420083;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .scans .pricing .pricing-contact {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .pricing .pricing-contact {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .scans .pricing .pricing-contact a {
+    color: #420083 !important;
+    text-decoration: none;
+    font-weight: 700;
+}
+.scanning-monitoring-app .scans .help {
+    color: #000;
+    background: #fff2b6;
+    border-radius: 10px;
+    padding: 33px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .scans .help .help-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help .help-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+.scanning-monitoring-app .scans .help .help-text strong {
+    font-size: 24px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help .help-text strong {
+        font-size: 18px;
+    }
+}
+.scanning-monitoring-app .scans .help .help-btn {
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-report {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: 'Rubik', sans-serif;
+    /*display: flex;*/
+    flex-direction: column;
+}
+.scanning-monitoring-app .accessibility-report .report-date {
+    display: inline-flex; /* change from flex → inline-flex */
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+
+    padding: 6px 12px; /* ADD */
+    border-radius: 8px; /* ADD */
+    background: #f5f3ff; /* ADD (light purple theme) */
+    border: 1px solid #e0d7ff; /* ADD */
+}
+.scanning-monitoring-app .accessibility-report .report-date label {
+    font-weight: 600;
+    color: #5b21b6;
+    margin: 0;
+}
+
+.scanning-monitoring-app .accessibility-report .report-date span {
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/*.scanning-monitoring-app .accessibility-report .report-date::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 70px;
+    height: 2px;
+    background: #ef4444;
+    border-radius: 2px;
+}*/
+.scanning-monitoring-app .accessibility-report .report-date select {
+    border: 1px solid #ccc;
+    padding: 7px 8px;
+    border-radius: 6px;
+    padding-right: 50px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 0.5rem center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+.scanning-monitoring-app .accessibility-report .top-section {
+    display: grid;
+    gap: 10px;
+    border: 0.5px solid #d6d6d6;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    grid-template-columns: 2fr 1fr;
+}
+@media only screen and (max-width: 1200px) {
+    .scanning-monitoring-app .accessibility-report .top-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .scanning-monitoring-app .accessibility-report .top-section {
+        grid-template-columns: 1fr;
+    }
+}
+.scanning-monitoring-app .accessibility-report .top-section .card {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #420083;
+    padding-bottom: 0px;
+    text-transform: inherit;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 500px) {
+    .scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .score-value {
+    font-size: 72px;
+    font-weight: 700;
+    color: #000;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .status-text {
+    font-size: 14px;
+    font-weight: 500;
+    /* background: #fff0f0;*/
+    border-radius: 5px;
+    padding: 6px 10px;
+    color: black;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .status-text.not-compliant {
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .pages-value {
+    font-size: 72px;
+    font-weight: 700;
+    color: #000;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #cae8ff;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .progress-bar .progress-fill {
+    height: 100%;
+    background: #4a6681;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .note {
+    font-weight: 400;
+    font-size: 14px;
+    background: none;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card.score-card {
+    border-radius: 10px 0 0 10px;
+    border: 0.5px solid rgba(183, 118, 255, 0.50);
+    background: rgba(145, 59, 239, 0.02);
+    line-height: normal;
+     max-width: 1280px;
+}
+.scanning-monitoring-app .accessibility-report .top-section .card.pages-card {
+    border-radius: 0 10px 10px 0;
+    border: 0.5px solid rgba(183, 118, 255, 0.50);
+    background: rgba(145, 59, 239, 0.02);
+    line-height: normal;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section {
+    background: #fff;
+    border: 0.5px solid #d6d6d6;
+    border-radius: 10px;
+    padding: 20px 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 540px) {
+    .scanning-monitoring-app .accessibility-report .wcag-section .wcag-header {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #420083;
+    padding-bottom: 0px;
+    text-transform: inherit;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header .view-btn {
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: #420083;
+    margin-bottom: 18px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header .view-btn svg {
+    margin-left: 10px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card {
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(183, 118, 255, 0.50);
+    background: rgba(145, 59, 239, 0.02);
+    text-align: left;
+    line-height: normal;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card .check-value {
+    font-size: 36px;
+    font-weight: 700;
+    display: block;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card .check-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.failed .check-label {
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.passed .check-label {
+    color: #1f7b22;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.na .check-label {
+    color: #787878;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .divider {
+    border: none;
+    border-top: 1px solid #e6e6e6;
+    margin: 30px 20px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card {
+    border: 1px solid #ddd;
+    padding: 26px 30px;
+    text-align: center;
+    border-radius: 5px;
+    background: #eff7ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-title {
+    font-weight: 700;
+    font-size: 24px;
+    display: block;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-count {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-count span {
+    font-weight: 600;
+    font-size: 24px;
+}
+.scanning-monitoring-app .accessibility-scanning {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.scanning-monitoring-app .accessibility-scanning .page-background {
+    position: absolute;
+    opacity: 0.3;
+}
+.scanning-monitoring-app .accessibility-scanning .title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 1rem;
+    border: 1px solid #420083;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .page-background {
+    background: url('../images/sitemap-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    gap: 0.25rem;
+    border: 0.5px solid #b776ff 80;
+    align-items: center;
+    justify-content: space-between;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #420083;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-title {
+        font-size: 16px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value {
+    font-size: 15px;
+    font-weight: 500;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .status-process {
+    color: #420083;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value span {
+    font-size: 36px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value img {
+    margin-right: 5px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .progress-bar {
+    width: 102px;
+    height: 6px;
+    background: #e8d5ff;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .progress-bar .progress-fill {
+    height: 100%;
+    background: #420083;
+    border-radius: 3px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .vilolations {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-value .vilolations span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-scanning .skynet-status .status-card .status-progress {
+    font-size: 15px;
+    font-weight: 700;
+    color: #9f0000;
+}
+.scanning-monitoring-app .accessibility-scanning .divider {
+    border: none;
+    border-top: 1px solid #ead5ff;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .plan {
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 10px;
+    position: relative;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .page-background {
+    background: url('../images/plan-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 1199px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info {
+        justify-content: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type .icon-circle {
+    background-color: #f7f1ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type .icon-circle svg, .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type .icon-circle img {
+    width: 16px;
+    height: 16px;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-desc {
+    font-size: 16px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-desc ul {
+    margin-bottom: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-badge {
+    background: #d1ffd3;
+    color: #006d04;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-badge {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right {
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal {
+    font-size: 16px;
+    font-weight: 500;
+    color: #420083;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal strong {
+    color: #030104;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .cancel-btn {
+    margin-left: 16px;
+    background: #9f0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .cancel-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing {
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .page-background {
+    background: url('../images/pricing-bg.png') no-repeat center;
+    opacity: 0.3;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .save {
+    background-color: #913bef;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 16px;
+    margin-left: 5px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .label {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .label.active {
+    color: #420083;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 2px solid #420083;
+    border-radius: 34px;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 2px;
+    background-color: #420083;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input:checked + .slider {
+    background-color: #420083;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: white;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier {
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .icon-circle {
+    background-color: #f7f1ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-info .tier-title {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-align: left;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-info .tier-pages {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-divider {
+    margin: 20px 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .old-price {
+    position: relative;
+    display: inline-block;
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .old-price::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: -5%;
+    width: 110%;
+    height: 2px;
+    background-color: #cd0000;
+    transform: rotate(-14deg);
+    transform-origin: center;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .new-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #420083;
+    margin: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .new-price .per-year {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .upgrade-btn {
+    background: #420083;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact a {
+    color: #420083;
+    text-decoration: none;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-scanning .help {
+    background: #fff2b6;
+    border-radius: 10px;
+    padding: 33px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help .help-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-text strong {
+    font-size: 24px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help .help-text strong {
+        font-size: 18px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-btn {
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-btn {
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+}
+.wcag-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.wcag-box {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f9f9f9;
+}
+.wcag-box strong {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 5px;
+}
+.failed {
+    color: #c62828;
+}
+.passed {
+    color: #2e7d32;
+}
+.na {
+    color: #616161;
+}
+.levels {
+    display: flex;
+    gap: 20px;
+}
+.level-box {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background: #e3f2fd;
+}
+.level-box strong {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 5px;
+}
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 21px;
+    background: #420083;
+    /* Blue background */
+    color: #fff;
+    /* White text */
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+}
+.back-btn:hover {
+    background: #420083;
+    /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+.back-btn:active {
+    transform: translateY(0);
+}
+.cancel-btnn {
+    background-color: #fff !important;
+    /* white background */
+    color: #a30000 !important;
+    /* red text */
+    border: 1.5px solid #a30000 !important;
+    /* red border */
+    /*padding: 10px 30px !important;
+    */
+    /* padding */
+    border-radius: 6px !important;
+    /* rounded edges */
+    font-weight: bold !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    /* full width like your screenshot */
+    display: block !important;
+    text-align: center !important;
+}
+.cancel-btnn:hover {
+    background-color: #a30000 !important;
+    /* red bg on hover */
+    color: #fff !important;
+    /* white text on hover */
+}
+#content {
+    padding-bottom: 10px !important;
+}
+.scanning-monitoring-app {
+    padding: 16px 30px 50px !important;
+}
+/*!* Target specifically your plugin's menu *!*/
+/*#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa {
+	*/
+/* position: relative;
+*/
+/* width: 20px;
+*/
+/* height: 20px;
+*/
+/* color: transparent !important;
+ !* fallback *!*/
+/*
+}
+*/
+/*!* Kill the FA pseudo-element *!*/
+/*#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa:before {
+	*/
+/* content: none !important;
+*/
+/*
+}
+*/
+/*!* Add your SVG as background *!*/
+/*#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa {
+	*/
+/* background: url("../../../modules/mod_skynetaccessibilityscanner/icon.svg") no-repeat center center;
+*/
+/* background-size: contain;
+*/
+/*
+}
+*/
+/* Force your custom icon to behave like FA icons */
+#admin-menu li a[href*="skynetaccessibilityscanner-manager"] i.fa {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    /* make sure background works */
+    text-indent: -9999px;
+    /* hide FA glyph if any */
+    background: url("../images/icon.svg") no-repeat center center;
+    background-size: contain;
+    /* match FA icon styles */
+    filter: brightness(0) invert(1);
+    /* turns it white like other icons */
+    opacity: 0.8;
+    /* same default FA opacity */
+    transition: opacity 0.2s ease-in-out;
+}
+/* Hover / active state */
+#admin-menu li a[href*="skynetaccessibilityscanner-manager"]:hover i.fa, #admin-menu li.selected a[href*="skynetaccessibilityscanner-manager"] i.fa {
+    opacity: 1;
+    /* brighten on hover/active */
+    filter: brightness(0) invert(1);
+}
+.custom-plugin-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../images/icon.svg") no-repeat center center;
+    background-size: contain;
+    margin-right: 8px;
+    /* space between icon and title */
+}
+#scroll-to-top {
+    display: none;
+}
+/* Full page loader */
+.page-loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Loader box */
+.loader-box {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+/* Spinner */
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #9b5cff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 12px;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Hide helper */
+.page-loader.hidden {
+    display: none;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html td.label, #row_skynetaccessibilityscannerpro_myscans_custom_html td.scope-label {
+    display: none !important;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html td.value {
+    padding-left: 0 !important;
+    padding-top: 0%;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html .value {
+    width: 100% !important;
+}
+#row_skynetaccessibilityscannerpro_myscans_custom_html select {
+    width: auto !important;
+}
+
+.userform {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(66, 0, 131, .10);
+    width: 100%;
+    max-width: 680px;
+    overflow: clip;
+    border: 1.5px solid #e8daff;
+    margin: 20px auto;
+    margin-right: 26%;
+}
+/* ───────────────────────────────────────────── EMAIL TOGGLE — exact styles from the module ───────────────────────────────────────────── */
+/* Wrapper — hidden by default;
+ shown when no email is set */
+#skynetEmailToggleWrapper {
+    /* display:none is set inline;
+     JS or demo-init sets display:block */
+}
+.skynet-email-toggle-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: #f8f4ff;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#skynetEmailToggleWrapper.skynet-form-open .skynet-email-toggle-bar {
+    border-bottom-color: #e0cfff;
+}
+.skynet-email-toggle-label {
+    font-size: 17px;
+    color: #420083;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.skynet-email-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    background: #420083;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+.skynet-email-toggle-btn:hover {
+    background: #5a00b3;
+}
+.skynet-email-toggle-btn:active {
+    transform: scale(0.97);
+}
+/* Rotate arrow when open */
+#skynetEmailToggleWrapper.skynet-form-open #skynetEmailToggleArrow {
+    transform: rotate(180deg);
+}
+/* Collapsible form panel */
+.skynet-email-form-panel {
+    background: #fff;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.skynet-email-form-inner {
+    padding: 24px 28px 20px;
+}
+.skynet-email-form-title {
+    margin: 0 0 18px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #420083;
+    padding-bottom: 0px;
+    text-transform: none;
+    line-height: inherit;
+}
+.skynet-email-form-error {
+    background: #fff5f5;
+    border: 1px solid #fc8181;
+    color: #c53030;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+.skynet-email-form-success {
+    background: #f0fff4;
+    border: 1px solid #68d391;
+    color: #276749;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+.skynet-email-form-row {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.skynet-email-form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+.skynet-email-form-input {
+    width: 100%;
+    max-width: 440px;
+    padding: 10px 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #222;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    outline: none;
+    background: #fafafa;
+}
+.skynet-email-form-input:focus {
+    border-color: #420083;
+    box-shadow: 0 0 0 3px rgba(66, 0, 131, 0.12);
+    background: #fff;
+}
+.skynet-email-form-input.skynet-input-error {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.10);
+}
+.skynet-email-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+.skynet-email-save-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 26px;
+    background: #420083;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.skynet-email-save-btn:hover {
+    background: #5a00b3;
+}
+.skynet-email-save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Spinner animation */
+@keyframes skynet-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.skynet-email-cancel-btn {
+    padding: 10px 18px;
+    background: transparent;
+    color: #666;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+.skynet-email-cancel-btn:hover {
+    border-color: #420083;
+    color: #420083;
+}
+@media (max-width: 600px) {
+    .skynet-email-toggle-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .skynet-email-form-inner {
+        padding: 16px;
+    }
+    .skynet-email-save-btn, .skynet-email-cancel-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .skynet-email-form-actions {
+        flex-direction: column;
+    }
+}
+
+body.plugin_page_skynetaccessibility_scanner #wrap {
+    max-width: 65% !important;
+}
+
+body.plugin_page_skynetaccessibility_scanner #content {
+    width: 100%;
+}
+
+body.plugin_page_skynetaccessibility_scanner .scanning-monitoring-app,
+body.plugin_page_skynetaccessibility_scanner .scanning-monitoring-app * {
+    font-family: 'Rubik', sans-serif !important;
+}
+
+/* ── Demo controls (not part of production component) ── */
+.demo-controls {
+    max-width: 680px;
+    width: 100%;
+    margin-top: 28px;
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 20px 24px;
+    color: #c8b8ff;
+    font-size: 13px;
+}
+.demo-controls h3 {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7c5cbf;
+    margin-bottom: 14px;
+}
+.demo-controls p {
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+.demo-controls code {
+    background: #2d1f4e;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: "rubik', sans-serif";
+    font-size: 12px;
+    color: #d6b4fc;
+}
+.demo-btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+.demo-reset-btn {
+    padding: 8px 18px;
+    background: #420083;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.demo-reset-btn:hover {
+    background: #5a00b3;
+}
+.demo-simulate-btn {
+    padding: 8px 18px;
+    background: transparent;
+    color: #c8b8ff;
+    border: 1.5px solid #420083;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.demo-simulate-btn:hover {
+    background: #420083;
+    color: #fff;
+}
+
+
+.sectiontop.admin-content-wrapper #adminpage {
+    width: fit-content;
+}
+
+@media (prefers-color-scheme: dark) {
+    a, .fm-refresh {
+        color: none;
+    }
+}
+
+#page_content h3 {
+    color: var(--primary-accent) !important;
+    margin: 0 0 10px;
+}
+
+:root{
+    --panel: ;
+}

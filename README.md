@@ -60,10 +60,6 @@ It acts as both an accessibility checker and compliance testing tool, helping te
 
 Explore the full capabilities of the accessibility monitoring ClassicPress plugin. Flexible plans allow to evaluate website accessibility requirements.
 
-### Pricing
-
-- 10 Days free trial
-
 #### Single Site
 
 - Small Site (Up to 25 pages): $9 Per Month
@@ -111,6 +107,58 @@ Explore the full capabilities of the accessibility monitoring ClassicPress plugi
 ## ⚙️ Configuration
 
 After activation, go to **Plugins > SkynetAccessibility Scanner > Settings** to configure the SkynetAccessibility Scanner Report.
+
+## Privacy Policy
+
+SkynetAccessibility Scanner communicates with external services hosted by Skynet Technologies in order to provide accessibility scanning, reporting, monitoring, and subscription management functionality.
+
+### External Service Usage
+
+This plugin connects to the following external service:
+
+* `https://skynetaccessibilityscan.com`
+
+No data is transmitted and no connection to external servers is established until the site administrator explicitly opts in and grants consent from within the plugin settings page.
+
+### Data Collected
+
+When consent is granted, the plugin may transmit the following information to Skynet Technologies servers:
+
+* Website URL/domain name
+* Administrator username
+* Administrator email address
+* Website accessibility scan results and related metadata
+* Subscription and package information required to provide the scanning service
+
+### Purpose of Data Collection
+
+The transmitted information is used solely for the following purposes:
+
+* Registering the website for accessibility scanning services
+* Performing accessibility scans
+* Generating accessibility reports and remediation recommendations
+* Managing subscriptions and scan packages
+* Displaying scan history and monitoring information within the plugin dashboard
+
+### Data Storage
+
+Accessibility scan data and related account information are securely stored on Skynet Technologies servers for the purpose of providing the accessibility scanning service.
+
+### User Consent
+
+Upon activation, the plugin displays a consent notice explaining what information will be transmitted and why.
+
+No data is sent to Skynet Technologies servers until the site administrator explicitly agrees and opts in to use the accessibility scanning service.
+
+If consent is not granted, the plugin will not establish any remote connections and no information will be transmitted.
+
+Administrators may revoke consent at any time by disabling the service, deactivating, or uninstalling the plugin.
+
+### Third-Party Privacy Policy
+
+For additional information regarding how data is processed and stored, please review our Privacy Policy:
+
+https://skynetaccessibilityscan.com/privacy-policy
 
 ## Live Demo
 
